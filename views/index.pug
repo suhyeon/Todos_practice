@@ -1,0 +1,13 @@
+extends layout/main
+
+block content
+  form(action="/login", method="post").p-3
+    input(type="hidden", name="_csrf", value=csrfToken)
+    h1 로그인
+    .form-group
+      label(for="input-username", required) 아이디
+      input.form-control#input-username(type="text", name="username")
+    .form-group
+      label(for="input-password", required) 비밀번호
+      input.form-control#input-password(type="password", name="password")
+    button.btn.btn-primary(type="submit") 로그인
